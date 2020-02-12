@@ -17,6 +17,12 @@
 
 let emptyArray = [];
 
+let red = document.querySelector(".red")
+let blue = document.querySelector(".blue")
+let yellow = document.querySelector(".yellow")
+let green = document.querySelector(".green")
+
+
 let square = document.querySelectorAll(".square");
 let start = document.querySelector(".start");        
 
@@ -49,8 +55,26 @@ function shuffle() {
 
 function run() {
     shuffle();
-    emptyArray.push(myArray[0]);
-    console.log(myArray)
-    console.log(emptyArray)
-    
+    emptyArray.unshift(myArray[0]);
+    console.log(myArray);
+    console.log(emptyArray);
+
+    //loop throu
+    for (i = 0; i > emptyArray.length)
+    function lightUp() {
+        if(emptyArray[0] == red) {
+            red.style.backgroundColor = "rgb(253, 116, 116)"
+        }else if(emptyArray[0] == blue) {
+            blue.style.backgroundColor = "rgb(91, 91, 241)"
+        }if(emptyArray[0] == yellow) {
+            yellow.style.backgroundColor = "rgb(224, 224, 8)"
+        }else if(emptyArray[0] == green) {
+            green.style.backgroundColor = "rgb(3, 187, 3)"
+        }
     }
+    console.log(blue)
+    console.log(red)
+    console.log(green)
+    console.log(yellow)
+    lightUp();
+}
