@@ -25,7 +25,8 @@ let myArray = Array.from(square)
 
 start.addEventListener("click", run);
 
-//shuffle array
+//fisher yates shuffle array
+//https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
 function shuffle() {
     let counter = myArray.length;
 
@@ -48,16 +49,8 @@ function shuffle() {
 
 function run() {
     shuffle();
-    console.log(myArray);
-    myArray.push(emptyArray);
-    console.log
-
-//run a shuffle 
-    //for(i = 0; i = square.length; i++) {
-        //square.random
-        //console.l
-
+    emptyArray.push(myArray[0]);
+    console.log(myArray)
+    console.log(emptyArray)
+    
     }
-    //for (i = 0; i > square.length; i++) {
-       // square[i].random
-    //}
