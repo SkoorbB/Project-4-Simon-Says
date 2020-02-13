@@ -44,7 +44,7 @@
     border: 10px solid rgba(255, 255, 255, 0.459);
 }
 
-.red:hover {
+.red:active {
     cursor: pointer;
     background-color: rgb(253, 116, 116);
 }
@@ -56,7 +56,7 @@
     border-top-left-radius: 100px;
 }
 
-.blue:hover {
+.blue:active {
     cursor: pointer;
     background-color: rgb(91, 91, 241);
 }
@@ -68,7 +68,7 @@
     border-top-right-radius: 100px;
 }
 
-.yellow:hover {
+.yellow:active {
     cursor: pointer;
     background-color: rgb(224, 224, 8);
 }
@@ -80,7 +80,7 @@
     border-bottom-right-radius: 100px;
 }
 
-.green:hover {
+.green:active {
     cursor: pointer;
     background-color: rgb(3, 187, 3);
 }

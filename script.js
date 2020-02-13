@@ -1,13 +1,3 @@
-//press start - function
-//random square will light up
-           // v
-//uses queryselector (".square") - grabs array
-        // v
-//.random light up
-
-//function "light up"
-//if (a certain square)
-//.square:hover lighter background 
 
 //event listener stops 
 //click correct button to go on 
@@ -24,10 +14,17 @@ let green = document.querySelector(".green")
 
 
 let square = document.querySelectorAll(".square");
-let start = document.querySelector(".start");        
+let start = document.querySelector(".start");
+let reset = document.querySelector(".reset");
 
 //turn nodelist into array
 let myArray = Array.from(square)
+
+reset.addEventListener("click", function(e){
+    e.preventDefault()
+    location.reload()
+})
+
 
 start.addEventListener("click", run);
 
@@ -53,28 +50,48 @@ function shuffle() {
     return myArray;
 }
 
-function run() {
+//light up the squares
+function lightUp (){
+    for (i = 0; i <= emptyArray.length; i++) 
+        if (emptyArray[i] == red) {
+            red.style.backgroundColor = "rgb(253, 116, 116)";
+        } else if (emptyArray[i] == blue) {
+            blue.style.backgroundColor = "rgb(91, 91, 241)";
+        } else if (emptyArray[i] == yellow) {
+            yellow.style.backgroundColor = "rgb(224, 224, 8)";
+        } else if (emptyArray[i] == green) {
+            green.style.backgroundColor = "rgb(3, 187, 3)";
+        }
+        return emptyArray;
+    }
+
+
+
+function run(e) {
+    e.preventDefault();
     shuffle();
-    emptyArray.unshift(myArray[0]);
+    emptyArray.push(myArray[0]);
+    lightUp();
     console.log(myArray);
     console.log(emptyArray);
 
-    //loop throu
-    for (i = 0; i > emptyArray.length)
-    function lightUp() {
-        if(emptyArray[0] == red) {
-            red.style.backgroundColor = "rgb(253, 116, 116)"
-        }else if(emptyArray[0] == blue) {
-            blue.style.backgroundColor = "rgb(91, 91, 241)"
-        }if(emptyArray[0] == yellow) {
-            yellow.style.backgroundColor = "rgb(224, 224, 8)"
-        }else if(emptyArray[0] == green) {
-            green.style.backgroundColor = "rgb(3, 187, 3)"
+    /*setInterval(() => {
+        if (emptyArray[i] == red) {
+            red.style.backgroundColor = "red"
+        } else if (emptyArray[i] == blue) {
+            blue.style.backgroundColor = "blue"
+        } if (emptyArray[i] == yellow) {
+            yellow.style.backgroundColor = "rgb(187, 187, 8)"
+        } else if (emptyArray[i] == green) {
+            green.style.backgroundColor = "green"
         }
-    }
+    }, 2000);*/
+
     console.log(blue)
     console.log(red)
     console.log(green)
     console.log(yellow)
-    lightUp();
+
 }
+
+//want to set a timer for unshift so that each will light up seperately 
